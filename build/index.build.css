@@ -1,3 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body, html {
+  font-family: 'Quicksand', sans-serif;
+  width: 100%;
+  height: 100%; }
+
+#background-image {
+  background: lightblue;
+  position: fixed;
+  background-size: cover;
+  width: 100vw;
+  background-repeat: no-repeat;
+  height: 100vh;
+  z-index: -1; }
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 32px;
+  flex-wrap: wrap; }
+
+.drop-area {
+  background: #dfe3e6;
+  min-height: 200px;
+  min-width: 300px;
+  margin: 5px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  transition: all .5s; }
+  .drop-area:hover {
+    box-shadow: 0px 2px 6px 0px gray; }
+
+.item-container {
+  padding: 15px;
+  background: rgba(15, 89, 89, 0.7);
+  margin: 20px;
+  color: #fff;
+  font-weight: 100;
+  cursor: move;
+  cursor: grab;
+  border-radius: 4px;
+  transition: background .4s; }
+  .item-container:hover {
+    background: rgba(15, 89, 89, 0.9); }
+
+h1 {
+  color: darkslategray;
+  padding: 20px 0 0 20px;
+  font-size: 17px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  font-weight: 100; }
+
+input {
+  border: 1px solid blue;
+  display: block;
+  margin: 20px auto;
+  width: 260px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 16px;
+  padding-left: 25px;
+  background: rgba(255, 255, 255, 0.8);
+  outline: none;
+  color: #000;
+  transition: all .5s ease; }
+  input:focus, input:hover {
+    background: white; }
+
+.trash-drop {
+  width: 200px;
+  height: 100px;
+  border: 2px solid #d93240;
+  background: rgba(217, 50, 64, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 70px auto;
+  color: #fff;
+  border-radius: 20px;
+  transition: all .5s;
+  font-weight: 500; }
+  .trash-drop:hover {
+    background: rgba(217, 50, 64, 0.2);
+    width: 210px;
+    height: 110px; }
+
 html {
   line-height: 1.5;
   font-family: "Helvetica", sans-serif;
@@ -12,7 +104,7 @@ html {
   html header {
     padding-top: 10px;
     background: #26a69a;
-    border-bottom: 4px solid #eaeaea;
+    box-shadow: 0px 2px 6px 0px grey;
     position: relative;
     top: 0;
     left: 0;
@@ -27,8 +119,7 @@ html {
   html .pane-title {
     margin-bottom: 10px; }
   html .page-container {
-    min-height: 80vh;
-    margin: 20px; }
+    min-height: calc(100vh - 100px); }
     html .page-container .left-pane, html .page-container .right-pane {
       margin: 5%;
       float: left;
@@ -40,6 +131,5 @@ html {
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 1rem;
     text-align: center;
     z-index: 100; }
