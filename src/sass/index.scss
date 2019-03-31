@@ -1,3 +1,4 @@
+@import './font-awesome.min';
 @import './variables';
 @import './board';
 
@@ -15,12 +16,10 @@ html {
 
   body {
     margin: 0;
+    background-color: #26a69a;
   }
 
   header {
-    padding-top: 10px;
-    background: #26a69a;
-    box-shadow: 0px 2px 6px 0px grey;
     position: relative;
     top: 0;
     left: 0;
@@ -28,11 +27,21 @@ html {
     z-index: 200;
 
     .page-header {
+      display: none;
       text-align: center;
       font-size: 40px;
       font-weight: 300;
       color: #fff;
       -webkit-font-smoothing: antialiased;
+    }
+
+    .logo-icon {
+      background: url(images/trello-logo-white.svg);
+      background-size: 80px;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 50px;
+      background-color: rgba(0,0,0,0.1);
     }
   }
 
@@ -55,10 +64,18 @@ html {
   }
 
   footer {
+    display: none;
     right: 0;
     bottom: 0;
     left: 0;
     text-align: center;
     z-index: 100;
+  }
+
+  .page-error-content {
+    color: white;
+    font-size: 28px;
+    margin-top: 40px;
+    text-align: center;
   }
 }
