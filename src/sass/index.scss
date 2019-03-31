@@ -1,4 +1,11 @@
+@import './font-awesome.min';
 @import './variables';
+@import './modal';
+@import './board';
+
+:root {
+  --themeColor : #{$primary-app-color};
+}
 
 html {
   line-height: 1.5;
@@ -14,12 +21,10 @@ html {
 
   body {
     margin: 0;
+    background-color: var(--themeColor);
   }
 
   header {
-    padding-top: 10px;
-    background: #26a69a;
-    border-bottom: 4px solid #eaeaea;
     position: relative;
     top: 0;
     left: 0;
@@ -27,11 +32,39 @@ html {
     z-index: 200;
 
     .page-header {
+      display: none;
       text-align: center;
       font-size: 40px;
       font-weight: 300;
       color: #fff;
       -webkit-font-smoothing: antialiased;
+    }
+
+    .logo-icon {
+      background: url(images/trello-logo-white.svg);
+      background-size: 80px;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 50px;
+      background-color: rgba(0,0,0,0.1);
+    }
+
+    .change-theme {
+      position: absolute;
+      top: 13px;
+      right: 0px;
+
+      label {
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: lighter;
+        text-decoration: underline;
+      }
+
+      .color-picker {
+        visibility: hidden;
+      }
     }
   }
 
@@ -40,8 +73,8 @@ html {
   }
   
   .page-container {
-    min-height: 80vh;
-    margin: 20px;
+    min-height: calc(100vh - 50px);
+    overflow-x: auto;
 
     .left-pane, .right-pane {
       margin: 5%;
@@ -55,11 +88,18 @@ html {
   }
 
   footer {
+    display: none;
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 1rem;
     text-align: center;
     z-index: 100;
+  }
+
+  .page-error-content {
+    color: white;
+    font-size: 28px;
+    margin-top: 40px;
+    text-align: center;
   }
 }
