@@ -3,6 +3,10 @@
 @import './modal';
 @import './board';
 
+:root {
+  --themeColor : #{$primary-app-color};
+}
+
 html {
   line-height: 1.5;
   font-family: "Helvetica", sans-serif;
@@ -17,7 +21,7 @@ html {
 
   body {
     margin: 0;
-    background-color: $primary-app-color;
+    background-color: var(--themeColor);
   }
 
   header {
@@ -44,6 +48,24 @@ html {
       height: 50px;
       background-color: rgba(0,0,0,0.1);
     }
+
+    .change-theme {
+      position: absolute;
+      top: 13px;
+      right: 0px;
+
+      label {
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: lighter;
+        text-decoration: underline;
+      }
+
+      .color-picker {
+        visibility: hidden;
+      }
+    }
   }
 
   .pane-title {
@@ -51,7 +73,8 @@ html {
   }
   
   .page-container {
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 50px);
+    overflow-x: auto;
 
     .left-pane, .right-pane {
       margin: 5%;
